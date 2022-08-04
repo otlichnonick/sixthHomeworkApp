@@ -12,16 +12,17 @@ class ViewModel: ObservableObject {
     @Published var text: String = "Сегодня солнце зашло за тучи, сегодня волны бьют так больно, я видел, как умирает надежда Ямайки - моя душа плачет! Какая боль, какая боль! Аргентина-Ямайка: 5-0"
     @Published private var sortIsAscending: Bool = true
     @Published var searchText: String = ""
-    @Published var searchSuffix: String = ""
-    
+    @Published var sortedWholeListSuffix: [(String, Int)] = .init()
+    @Published var sortedTopTenSuffixList: [(String, Int)] = .init()
+
     private var bag: Set<AnyCancellable> = .init()
     
-    var sortedWholeListSuffix: [(String, Int)] {
+    private var wholeListSuffix: [(String, Int)] {
         calculateSuffixesNumber()
             .sorted { sortIsAscending ? $0.0 < $1.0 : $0.0 > $1.0 }
     }
     
-    var sortedTopTenSuffixList: [(String, Int)] {
+    private var topTenSuffixList: [(String, Int)] {
         calculateSuffixesNumber()
             .sorted(by: { $0.1 > $1.1 })
             .prefix(10)
@@ -33,7 +34,8 @@ class ViewModel: ObservableObject {
             .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
             .sink(receiveValue: { [weak self] value in
                 guard let strongSelf = self else { return }
-                strongSelf.searchSuffix = value
+                strongSelf.sortedWholeListSuffix = value.isEmpty ? strongSelf.wholeListSuffix : strongSelf.wholeListSuffix.filter({ $0.0.contains(value.lowercased()) })
+                strongSelf.sortedTopTenSuffixList = value.isEmpty ? strongSelf.topTenSuffixList : strongSelf.topTenSuffixList.filter({ $0.0.contains(value.lowercased()) })
             })
             .store(in: &bag)
     }
@@ -44,10 +46,6 @@ class ViewModel: ObservableObject {
     
     func sortDescending() {
         sortIsAscending = false
-    }
-    
-    func showListRelatedToSearchSuffix() {
-        
     }
     
     private func calculateSuffixesNumber() -> [(String, Int)] {
@@ -63,7 +61,6 @@ class ViewModel: ObservableObject {
         
         return store
     }
-    
     
     private func getSuffixes() -> [String] {
         text
