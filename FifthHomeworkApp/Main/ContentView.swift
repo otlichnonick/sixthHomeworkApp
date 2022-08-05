@@ -32,6 +32,10 @@ struct ContentView: View {
                 }
                 .tag(1)
         }
+        .onOpenURL { url in
+            print("url", url)
+            self.selection = url == Constants.suffixListUrl ? 1 : 0
+        }
     }
 }
 

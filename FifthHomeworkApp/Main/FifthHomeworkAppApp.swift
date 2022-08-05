@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct FifthHomeworkAppApp: App {
-    @StateObject var viewModel: ViewModel = .init()
+    @StateObject var viewModel: ViewModel = .shared
     
     var body: some Scene {
         WindowGroup {

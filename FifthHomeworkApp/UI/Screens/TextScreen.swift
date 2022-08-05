@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TextScreen: View {
-    @AppStorage("suffix", store: UserDefaults(suiteName: "group.home.FifthHomeworkApp")) var textForSuffixes = ""
     @EnvironmentObject private var viewModel: ViewModel
     
     var placeholder: String {
@@ -27,9 +27,10 @@ struct TextScreen: View {
                     .frame(height: UIScreen.main.bounds.width * 0.3)
                     .background(Color(uiColor: .systemGray6))
                     .cornerRadius(16)
-                    .onSubmit {
-                        textForSuffixes = viewModel.text
-                    }
+                    .onChange(of: viewModel.text, perform: { text in
+                        viewModel.setForSuffixes(new: text)
+                        WidgetCenter.shared.reloadTimelines(ofKind: "SuffixWidjet")
+                    })
                 
                 Text(placeholder)
                     .padding(8)

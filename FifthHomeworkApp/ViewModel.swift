@@ -9,13 +9,15 @@ import Foundation
 import Combine
 
 class ViewModel: ObservableObject {
-    @Published var text: String = "Сегодня солнце зашло за тучи, сегодня волны бьют так больно, я видел, как умирает надежда Ямайки - моя душа плачет! Какая боль, какая боль! Аргентина-Ямайка: 5-0"
+    static let shared: ViewModel = .init()
+    @Published var text: String = ""
     @Published private var sortIsAscending: Bool = true
     @Published var searchText: String = ""
     @Published var searchSuffix: String = ""
     @Published var wholeListSuffix: [(String, Int)] = .init()
     @Published var topTenSuffixList: [(String, Int)] = .init()
     private var bag: Set<AnyCancellable> = .init()
+    private let textStore: TextStore = .init()
     
     var sortedWholeListSuffix: [(String, Int)] {
         searchSuffix.isEmpty ? wholeListSuffix : wholeListSuffix.filter({ $0.0.contains(searchSuffix.lowercased()) })
@@ -25,8 +27,24 @@ class ViewModel: ObservableObject {
         searchSuffix.isEmpty ? topTenSuffixList : topTenSuffixList.filter({ $0.0.contains(searchSuffix.lowercased()) })
     }
     
-    init() { bindings() }
+    init() {
+        bindings()
+        text = textStore.text
+        debugPrint("text", text)
+    }
     
+    func setForSuffixes(new text: String) {
+        textStore.setForSuffixes(new: text)
+    }
+    
+    func sortAscending() {
+        sortIsAscending = true
+    }
+    
+    func sortDescending() {
+        sortIsAscending = false
+    }
+        
     private func bindings() {
         $text
             .sink { [weak self] newText in
@@ -51,14 +69,6 @@ class ViewModel: ObservableObject {
             .store(in: &bag)
     }
     
-    func sortAscending() {
-        sortIsAscending = true
-    }
-    
-    func sortDescending() {
-        sortIsAscending = false
-    }
-    
     private func calculateSuffixesNumber(from text: String) -> [(String, Int)] {
         var store: [(string: String, int: Int)] = .init()
         for string in getSuffixes(from: text) {
@@ -75,7 +85,7 @@ class ViewModel: ObservableObject {
     
     private func getSuffixes(from text: String) -> [String] {
         text
-            .components(separatedBy: .init(charactersIn: ",-!?;: "))
+            .components(separatedBy: .init(charactersIn: ",-!?;:\n "))
             .filter({ $0.count > 2 })
             .map({ String($0.lowercased().suffix(3)) })
     }
