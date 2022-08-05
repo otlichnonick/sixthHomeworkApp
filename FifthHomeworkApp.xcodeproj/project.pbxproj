@@ -18,7 +18,36 @@
 		3AF63124289A6BE900F9710C /* CGFloat+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF63123289A6BE900F9710C /* CGFloat+Ext.swift */; };
 		3AF63127289A70A700F9710C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF63126289A70A700F9710C /* ViewModel.swift */; };
 		3AF63129289A96C000F9710C /* SuffixList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF63128289A96C000F9710C /* SuffixList.swift */; };
+		3AF63131289BED8F00F9710C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF63130289BED8F00F9710C /* WidgetKit.framework */; };
+		3AF63133289BED8F00F9710C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF63132289BED8F00F9710C /* SwiftUI.framework */; };
+		3AF63136289BED8F00F9710C /* SuffixWidjet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF63135289BED8F00F9710C /* SuffixWidjet.swift */; };
+		3AF63138289BED9000F9710C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF63137289BED9000F9710C /* Assets.xcassets */; };
+		3AF6313C289BED9000F9710C /* SuffixWidjetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AF6312E289BED8F00F9710C /* SuffixWidjetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AF6313A289BED9000F9710C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AF630FB289A406F00F9710C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF6312D289BED8F00F9710C;
+			remoteInfo = SuffixWidjetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3AF6313D289BED9000F9710C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3AF6313C289BED9000F9710C /* SuffixWidjetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3AF63103289A406F00F9710C /* FifthHomeworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FifthHomeworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +62,14 @@
 		3AF63123289A6BE900F9710C /* CGFloat+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Ext.swift"; sourceTree = "<group>"; };
 		3AF63126289A70A700F9710C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3AF63128289A96C000F9710C /* SuffixList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixList.swift; sourceTree = "<group>"; };
+		3AF6312E289BED8F00F9710C /* SuffixWidjetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SuffixWidjetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF63130289BED8F00F9710C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3AF63132289BED8F00F9710C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3AF63135289BED8F00F9710C /* SuffixWidjet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWidjet.swift; sourceTree = "<group>"; };
+		3AF63137289BED9000F9710C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AF63139289BED9000F9710C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF63141289BFEE500F9710C /* FifthHomeworkApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FifthHomeworkApp.entitlements; sourceTree = "<group>"; };
+		3AF63142289BFF5A00F9710C /* SuffixWidjetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuffixWidjetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,13 +80,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AF6312B289BED8F00F9710C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF63133289BED8F00F9710C /* SwiftUI.framework in Frameworks */,
+				3AF63131289BED8F00F9710C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3AF630FA289A406F00F9710C = {
 			isa = PBXGroup;
 			children = (
+				3AF63142289BFF5A00F9710C /* SuffixWidjetExtension.entitlements */,
 				3AF63105289A406F00F9710C /* FifthHomeworkApp */,
+				3AF63134289BED8F00F9710C /* SuffixWidjet */,
+				3AF6312F289BED8F00F9710C /* Frameworks */,
 				3AF63104289A406F00F9710C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF63103289A406F00F9710C /* FifthHomeworkApp.app */,
+				3AF6312E289BED8F00F9710C /* SuffixWidjetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +115,7 @@
 		3AF63105289A406F00F9710C /* FifthHomeworkApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AF63141289BFEE500F9710C /* FifthHomeworkApp.entitlements */,
 				3AF63125289A709300F9710C /* Main */,
 				3AF63120289A619E00F9710C /* UI */,
 				3AF6311B289A4A1E00F9710C /* Helpers */,
@@ -136,6 +187,25 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		3AF6312F289BED8F00F9710C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AF63130289BED8F00F9710C /* WidgetKit.framework */,
+				3AF63132289BED8F00F9710C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AF63134289BED8F00F9710C /* SuffixWidjet */ = {
+			isa = PBXGroup;
+			children = (
+				3AF63135289BED8F00F9710C /* SuffixWidjet.swift */,
+				3AF63137289BED9000F9710C /* Assets.xcassets */,
+				3AF63139289BED9000F9710C /* Info.plist */,
+			);
+			path = SuffixWidjet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,15 +216,34 @@
 				3AF630FF289A406F00F9710C /* Sources */,
 				3AF63100289A406F00F9710C /* Frameworks */,
 				3AF63101289A406F00F9710C /* Resources */,
+				3AF6313D289BED9000F9710C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3AF6313B289BED9000F9710C /* PBXTargetDependency */,
 			);
 			name = FifthHomeworkApp;
 			productName = FifthHomeworkApp;
 			productReference = 3AF63103289A406F00F9710C /* FifthHomeworkApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3AF6312D289BED8F00F9710C /* SuffixWidjetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF63140289BED9000F9710C /* Build configuration list for PBXNativeTarget "SuffixWidjetExtension" */;
+			buildPhases = (
+				3AF6312A289BED8F00F9710C /* Sources */,
+				3AF6312B289BED8F00F9710C /* Frameworks */,
+				3AF6312C289BED8F00F9710C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuffixWidjetExtension;
+			productName = SuffixWidjetExtension;
+			productReference = 3AF6312E289BED8F00F9710C /* SuffixWidjetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -167,6 +256,9 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					3AF63102289A406F00F9710C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3AF6312D289BED8F00F9710C = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -185,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				3AF63102289A406F00F9710C /* FifthHomeworkApp */,
+				3AF6312D289BED8F00F9710C /* SuffixWidjetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -196,6 +289,14 @@
 			files = (
 				3AF6310E289A407100F9710C /* Preview Assets.xcassets in Resources */,
 				3AF6310B289A407100F9710C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF6312C289BED8F00F9710C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF63138289BED9000F9710C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +319,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AF6312A289BED8F00F9710C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF63136289BED8F00F9710C /* SuffixWidjet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AF6313B289BED9000F9710C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AF6312D289BED8F00F9710C /* SuffixWidjetExtension */;
+			targetProxy = 3AF6313A289BED9000F9710C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3AF6310F289A407100F9710C /* Debug */ = {
@@ -338,8 +455,10 @@
 		3AF63112289A407100F9710C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FifthHomeworkApp/FifthHomeworkApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FifthHomeworkApp/Preview Content\"";
@@ -367,8 +486,10 @@
 		3AF63113289A407100F9710C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FifthHomeworkApp/FifthHomeworkApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FifthHomeworkApp/Preview Content\"";
@@ -393,6 +514,62 @@
 			};
 			name = Release;
 		};
+		3AF6313E289BED9000F9710C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuffixWidjetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 836DR8655U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuffixWidjet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuffixWidjet;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.FifthHomeworkApp.SuffixWidjet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AF6313F289BED9000F9710C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuffixWidjetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 836DR8655U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuffixWidjet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuffixWidjet;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.FifthHomeworkApp.SuffixWidjet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,6 +587,15 @@
 			buildConfigurations = (
 				3AF63112289A407100F9710C /* Debug */,
 				3AF63113289A407100F9710C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF63140289BED9000F9710C /* Build configuration list for PBXNativeTarget "SuffixWidjetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF6313E289BED9000F9710C /* Debug */,
+				3AF6313F289BED9000F9710C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
