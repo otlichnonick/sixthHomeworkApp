@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A098BBF28B5154E00C473BF /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A369F0528B5135E0055AFB7 /* SearchModel.swift */; };
+		3A369F0228B4CFF60055AFB7 /* SuffixSearchHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A369F0128B4CFF60055AFB7 /* SuffixSearchHistoryScreen.swift */; };
+		3A369F0628B5135E0055AFB7 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A369F0528B5135E0055AFB7 /* SearchModel.swift */; };
 		3AE27E5D289CFD3700D37955 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE27E5C289CFD3700D37955 /* Constants.swift */; };
 		3AE27E5E289CFF4D00D37955 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE27E5C289CFD3700D37955 /* Constants.swift */; };
 		3AE27E66289D121800D37955 /* SmallWidgetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE27E62289D115B00D37955 /* SmallWidgetScreen.swift */; };
@@ -57,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A369F0128B4CFF60055AFB7 /* SuffixSearchHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSearchHistoryScreen.swift; sourceTree = "<group>"; };
+		3A369F0528B5135E0055AFB7 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		3AE27E5C289CFD3700D37955 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AE27E62289D115B00D37955 /* SmallWidgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetScreen.swift; sourceTree = "<group>"; };
 		3AE27E64289D116900D37955 /* MediumWidgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetScreen.swift; sourceTree = "<group>"; };
@@ -143,6 +148,7 @@
 				3AF6310A289A407100F9710C /* Assets.xcassets */,
 				3AF6310C289A407100F9710C /* Preview Content */,
 				3AF63126289A70A700F9710C /* ViewModel.swift */,
+				3A369F0528B5135E0055AFB7 /* SearchModel.swift */,
 			);
 			path = FifthHomeworkApp;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 			children = (
 				3AF63117289A412800F9710C /* SuffixListScreen.swift */,
 				3AF63119289A414600F9710C /* TextScreen.swift */,
+				3A369F0128B4CFF60055AFB7 /* SuffixSearchHistoryScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -338,9 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A369F0628B5135E0055AFB7 /* SearchModel.swift in Sources */,
 				3AF63109289A406F00F9710C /* ContentView.swift in Sources */,
 				3AE27E5D289CFD3700D37955 /* Constants.swift in Sources */,
 				3AF63107289A406F00F9710C /* FifthHomeworkAppApp.swift in Sources */,
+				3A369F0228B4CFF60055AFB7 /* SuffixSearchHistoryScreen.swift in Sources */,
 				3AF6311E289A4A4200F9710C /* View+Ext.swift in Sources */,
 				3AF63118289A412800F9710C /* SuffixListScreen.swift in Sources */,
 				3AF63145289CE59100F9710C /* TextStore.swift in Sources */,
@@ -360,6 +369,7 @@
 				3AF63136289BED8F00F9710C /* SuffixWidjet.swift in Sources */,
 				3AE27E66289D121800D37955 /* SmallWidgetScreen.swift in Sources */,
 				3AF63147289CF05C00F9710C /* TextStore.swift in Sources */,
+				3A098BBF28B5154E00C473BF /* SearchModel.swift in Sources */,
 				3AE27E67289D121C00D37955 /* MediumWidgetScreen.swift in Sources */,
 				3AE27E5E289CFF4D00D37955 /* Constants.swift in Sources */,
 			);

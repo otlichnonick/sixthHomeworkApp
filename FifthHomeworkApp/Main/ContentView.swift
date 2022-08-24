@@ -31,6 +31,16 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+            
+            SuffixSearchHistoryScreen()
+                .tabItem {
+                    Label {
+                        Text("История")
+                    } icon: {
+                        Image(systemName: "book.closed")
+                    }
+                }
+                .tag(2)
         }
         .onOpenURL { url in
             print("url", url)

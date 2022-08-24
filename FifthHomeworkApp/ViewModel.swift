@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class ViewModel: ObservableObject {
     static let shared: ViewModel = .init()
@@ -14,6 +15,7 @@ class ViewModel: ObservableObject {
     @Published private var sortIsAscending: Bool = true
     @Published var searchText: String = ""
     @Published var searchSuffix: String = ""
+    @Published var searchModels: [SearchModel]!
     @Published var wholeListSuffix: [(String, Int)] = .init()
     @Published var topTenSuffixList: [(String, Int)] = .init()
     private var bag: Set<AnyCancellable> = .init()
@@ -30,7 +32,22 @@ class ViewModel: ObservableObject {
     init() {
         bindings()
         text = textStore.text
-        debugPrint("text", text)
+        searchModels = textStore.searchModels
+    }
+    
+    func getColorForModel(with time: Double) -> Color {
+        guard let max = textStore.maxTime,
+              let min = textStore.minTime else { return Color.gray }
+        print("max = \(max), min = \(min)")
+        switch time {
+        case time where time == max:
+            return Color(red: 1, green: 0, blue: 0)
+        case time where time == min:
+            return Color(red: 0, green: 1, blue: 0)
+        default:
+            let interval = max - min
+            return Color(red: time/interval, green: 1 - time/interval, blue: 0)
+        }
     }
     
     func setForSuffixes(new text: String) {
@@ -44,7 +61,7 @@ class ViewModel: ObservableObject {
     func sortDescending() {
         sortIsAscending = false
     }
-        
+    
     private func bindings() {
         $text
             .sink { [weak self] newText in
@@ -65,6 +82,14 @@ class ViewModel: ObservableObject {
             .sink(receiveValue: { [weak self] value in
                 guard let strongSelf = self else { return }
                 strongSelf.searchSuffix = value
+                if value.count == 3 {
+                    let startTime = CFAbsoluteTimeGetCurrent()
+                    _ = strongSelf.wholeListSuffix.filter({ $0.0.contains(value.lowercased()) })
+                    let diffTime = CFAbsoluteTimeGetCurrent() - startTime
+                    print("diffTime", diffTime)
+                    strongSelf.textStore.searchModelsAppend(new: SearchModel(time: diffTime, suffix: value.lowercased()))
+                }
+                strongSelf.searchModels = strongSelf.textStore.searchModels
             })
             .store(in: &bag)
     }

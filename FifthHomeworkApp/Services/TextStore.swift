@@ -9,12 +9,23 @@ import Foundation
 
 class TextStore {
     private(set) var text: String = ""
+    private(set) var searchModels: [SearchModel] = .init()
+    
     private let defaults = UserDefaults(suiteName: "group.home.FifthHomeworkApp")!
     private let textKey = "text"
+    private let searchModelKey = "searchModelKey"
+    
+    var maxTime: Double? {
+        searchModels.count > 1 ? searchModels.max(by: { $0.time < $1.time })?.time : nil
+    }
+    
+    var minTime: Double? {
+        searchModels.count > 1 ? searchModels.max(by: { $0.time > $1.time })?.time : nil
+    }
     
     init() {
         text = getText()
-        print("text from userDefaults", text)
+        searchModels = getSuffixes()
     }
     
     private func getText() -> String {
@@ -24,6 +35,17 @@ class TextStore {
     func setForSuffixes(new newText: String) {
         text = newText
         defaults.set(newText, forKey: textKey)
-        print("newText", newText)
+    }
+    
+    private func getSuffixes() -> [SearchModel] {
+        guard let data = defaults.value(forKey: searchModelKey) as? Data else { return [] }
+        let suffixes = try? PropertyListDecoder().decode([SearchModel].self, from: data)
+        return suffixes ?? []
+    }
+    
+    func searchModelsAppend(new model: SearchModel) {
+        print("model", model)
+        searchModels.append(model)
+        defaults.set(try? PropertyListEncoder().encode(searchModels), forKey: searchModelKey)
     }
 }
